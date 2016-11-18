@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Contacts.Objects
+namespace ContactList
 {
   public class Contact
   {

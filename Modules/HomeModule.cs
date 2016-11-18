@@ -1,27 +1,33 @@
 using Nancy;
 using System.Collections.Generic;
-using Contacts.Objects;
+using ContactList;
 
-namespace Contacts
+namespace ContactList
 {
   public class HomeModule : NancyModule
   {
     public HomeModule()
     {
       Get["/"] = _ => {
-        return View["index.cshtml"];
-      };
-      Get["/contacts"] = _ => {
-        List<Contact> allContacts = Contact.GetAll();
+        var allContacts = Contact.GetAll();
         return View["index.cshtml", allContacts];
       };
-      Get["/contacs/new"] = _ => {
+      Get["/index"] = _ => {
+        var allContacts = Contact.GetAll();
+        return View["index.cshtml", allContacts];
+      };
+      Get["/contacts/new"] = _ => {
         return View["contact_form.cshtml"];
       };
       Post["/contact"] = _ => {
-        Contact newContact = new Contact(Request.Form["new-contact-name"],Request.Form["new-contact-phone"],Request.Form["new-contact-address"]);
-        List<Contact> allContacts = Contact.GetAll();
-        return View["index.cshtml", allContacts];
+        var newContact = new Contact(Request.Form["new-contact-name"],Request.Form["new-contact-phone"],Request.Form["new-contact-address"]);
+        var allContacts = Contact.GetAll();
+        return View["/contact_new.cshtml", allContacts];
+      };
+      Get["/contacts/{id}"] = parameters =>
+      {
+        var contact = Contact.Find(parameters.id);
+        return View["/contact.cshtml", contact];
       };
     }
   }

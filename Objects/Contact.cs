@@ -7,6 +7,7 @@ namespace Contacts.Objects
     private string _name;
     private string _phone;
     private string _address;
+    private int _id;
     private static List<Contact> _instances = new List<Contact> {};
 
     public Contact (string name, string phone, string address)
@@ -41,7 +42,7 @@ namespace Contacts.Objects
     {
       _address = newAddress;
     }
-    public in GetId()
+    public int GetId()
     {
       return _id;
     }
@@ -55,7 +56,7 @@ namespace Contacts.Objects
     }
     public static Contact Find(int searchId)
     {
-      return _instances[searcId-1];
+      return _instances[searchId-1];
     }
   }
 }

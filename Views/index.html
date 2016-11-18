@@ -4,11 +4,11 @@
   <h3>Record your contacts here!</h3>
 }
 <ul>
-@foreach (var CD in Model)
+@foreach (var contact in Model)
 {
-    <li>@Contact.GetName()</li>
-    <li>@Contact.GetPhone()</li>
-    <li>@Contact.GetAddress()</li>
+    <li><a href="/contacts/@contact.GetId()">@Contact.GetName()</a></li>
+    <li><a href="/contacts/@contact.GetId()">@Contact.GetPhone()</a></li>
+    <li><a href="/contacts/@contact.GetId()">@Contact.GetAddress()</a></li>
 }
 </ul>
 

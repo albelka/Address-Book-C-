@@ -1,10 +1,21 @@
-<h1>You created a contact! </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Friend!</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='/Content/css/styles/css'>
+  </head>
+  <body>
+    <div class="container">
+      <h1>You created a contact! </h1>
 
-<h1>@Model[Model.Count-1].GetName()</h1>
-<ul>
-  <li>@Model[Model.Count-1].GetPhone()</li>
-  <li>@Model[Model.Count-1].GetAddress()</li>
-</ul>
+      <h1>@Model[Model.Count-1].GetName()</h1>
+      <ul>
+        <li>@Model[Model.Count-1].GetPhone()</li>
+        <li>@Model[Model.Count-1].GetAddress()</li>
+      </ul>
 
-
-<a href= '/index'>View all contacts</a>
+      <a href= '/index'>View all contacts</a>
+    </div>
+  </body>
+</html>

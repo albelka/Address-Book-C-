@@ -29,6 +29,12 @@ namespace ContactList
         var contact = Contact.Find(parameters.id);
         return View["/contact.cshtml", contact];
       };
+      Post["/contacts/clear"] = _ =>
+      {
+        var allContacts = Contact.GetAll();
+        allContacts.Clear();
+        return View["contacts_clear.cshtml"];
+      };
     }
   }
 }

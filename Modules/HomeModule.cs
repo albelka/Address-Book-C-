@@ -1,6 +1,7 @@
 using Nancy;
 using System.Collections.Generic;
 using ContactList;
+using System;
 
 namespace ContactList
 {
@@ -35,6 +36,14 @@ namespace ContactList
         allContacts.Clear();
         return View["contacts_clear.cshtml"];
       };
+      // Post["/contact/clear/{id}"] = parameters =>
+      // {
+      //   System.Console.WriteLine("made it");
+      //   var contact = Contact.Find(parameters.id);
+      //   var allContacts = Contact.GetAll();
+      //   allContacts.Remove(contact);
+      //   return View["contact_clear.cshtml"];
+      // };
     }
   }
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello Friend!</title>
+    <title>Address Book</title>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel='stylesheet' href='/Content/css/styles/css'>
+    <link rel='stylesheet' href='../Content/css/styles/css'>
   </head>
   <body>
     <div class="container">
@@ -11,9 +11,12 @@
       <ul>
         <li>@Model.GetPhone()</li>
         <li>@Model.GetAddress()</li>
-      </ul>
+      </ul><br>
+      <!-- <form action="/contact/clear" method="post">
+        <button type="submit">Clear This Contact</button>
+      </form><br> -->
 
-      <a href= '/contacts/new'>Add another contact</a>
+      <a href= '/contacts/new'>Add another contact</a><br>
       <a href= '/index'>View all contacts</a>
     </div>
   </body>
